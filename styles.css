@@ -1,0 +1,122 @@
+/* CSS Variables */
+html {
+  /* Colors */
+  --bodyText: #000;
+  --linkBackground: #FFEEE2;
+  --linkText: #000;
+  --linkHoverBackground: #FFEEE2;
+  --linkHoverText: #000;
+  --profileBackground: #FFEEE2;
+  --defaultAvatarBackground: #780016;
+  --profileTitleText: #000;
+  --profileDescriptionText: rgba(0, 0, 0, 0.6);
+
+  /* Border Radius */
+  --linkRadius: 28px;
+
+  /* Font Family */
+  --profileFontFamilyPrimary: 'Space Mono', monospace;
+  --profileFontFamilySecondary: 'Inter', sans-serif;
+
+  /* Font Weight */
+  --headerFontWeight: 700;
+  --linkTextFontWeight: 500;
+
+  /* Font Size */
+  --profileDescriptionFontSize: 14px;
+  --linkTextFontSize: 14px;
+  --headerFontSize: 20px;
+
+  /* Line Height */
+  --profileDescriptionLineHeight: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    --profileDescriptionFontSize: 16px;
+    --linkTextFontSize: 16px;
+    --headerFontSize: 20px;
+  }
+}
+
+/* Global Styles */
+html, body {
+  background-color: var(--profileBackground);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--profileFontFamilySecondary);
+  color: var(--bodyText);
+}
+
+/* Main Container – spacing similar to original */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 16px 32px; /* Top: 64px; Sides: 16px; Bottom: 32px */
+}
+
+/* Profile Container */
+.profile-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Profile Image */
+#profile-picture {
+  margin-bottom: 16px;
+}
+.profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--defaultAvatarBackground);
+}
+
+/* Profile Title */
+#profile-title h1 {
+  font-size: var(--headerFontSize);
+  font-family: var(--profileFontFamilyPrimary);
+  font-weight: var(--headerFontWeight);
+  margin-bottom: 8px;
+  color: var(--profileTitleText);
+}
+
+/* Profile Description */
+#profile-description h2 {
+  font-size: var(--profileDescriptionFontSize);
+  line-height: var(--profileDescriptionLineHeight);
+  margin: 0 0 24px;
+  color: var(--profileDescriptionText);
+}
+
+/* Links Container */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Link Buttons with Border and Hover Effect */
+.link {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-decoration: none;
+  background-color: var(--linkBackground);
+  color: var(--linkText);
+  border: 1px solid var(--linkText);
+  border-radius: var(--linkRadius);
+  font-weight: var(--linkTextFontWeight);
+  font-size: var(--linkTextFontSize);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+.link:hover {
+  transform: scale(1.03);
+  background-color: var(--linkHoverBackground);
+  color: var(--linkHoverText);
+  border-color: var(--linkHoverText);
+}
